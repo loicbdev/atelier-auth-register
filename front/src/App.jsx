@@ -21,7 +21,7 @@ function App() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/sign-up" className="nav-link">
+              <Link to="/register" className="nav-link">
                 Register
               </Link>
             </li>
@@ -42,7 +42,7 @@ function App() {
             <Route exact path="/login">
               <Login />
             </Route>
-            <Route exact path="/sign-up">
+            <Route exact path="/register">
               <Register />
             </Route>
             <Route exact path="/users">
