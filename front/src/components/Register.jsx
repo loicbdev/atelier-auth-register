@@ -1,35 +1,41 @@
 /* eslint-disable prettier/prettier */
 import React, { useState } from "react";
-// import axios from "axios";
+import axios from "axios";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import useStyles from "./styleFormSubscribe";
 
 const Register = () => {
-  const [state, setState] = useState({
-    firstname: "",
-    lastname: "",
-    email: "",
-    password: "",
-    passwordConfirmation: "",
-  });
-//  const [result, setResult] = useState({ message: "" });
+  const [firstname, setFirstName] = useState("");
+  const [lastname, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleChange = (e) => {
-    const { value, name } = e.target;
-
-    setState({
-      ...state,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-//    signUp(state, setResult, setState);
+  const handleSubmit = () => {
+    const { REACT_APP_SERVER_ADDRESS } = process.env;
+    if (firstname && lastname && email && password) {
+      axios
+        .post(`${REACT_APP_SERVER_ADDRESS}/register/`, {
+          firstname,
+          lastname,
+          email,
+          password,
+        })
+        .then((res) => res.data)
+        .then((data) => {
+          localStorage.setItem("TOKEN", data.token); // (attention!!!)
+          alert("Sign-Up successfully"); // (attention!!!)
+        })
+        .catch((err) => {
+          alert(err.response.data.errorMessage);
+        });
+    } else {
+      alert("Please specify both firstname, lastname, email and password");
+    }
   };
 
   const classes = useStyles();
+
 
   return (
     <form className={classes.form} noValidate>
@@ -38,8 +44,8 @@ const Register = () => {
         name="firstname"
         label="Prénom"
         className={classes.someInput}
-        value={state.firstName}
-        onChange={handleChange}
+        value={firstname}
+        onChange={(e) => setFirstName(e.target.value)} 
         multiline
       />
       <TextField
@@ -47,8 +53,8 @@ const Register = () => {
         name="lastname"
         label="Nom"
         className={classes.someInput}
-        value={state.lastName}
-        onChange={handleChange}
+        value={lastname}
+        onChange={(e) => setLastName(e.target.value)} 
         multiline
       />
       <TextField
@@ -56,8 +62,8 @@ const Register = () => {
         name="email"
         label="Email"
         className={classes.someInput}
-        value={state.email}
-        onChange={handleChange}
+        value={email}
+        onChange={(e) => setEmail(e.target.value)} 
         autoComplete="email"
         autoFocus
       />
@@ -69,19 +75,8 @@ const Register = () => {
         type="password"
         autoComplete="current-password"
         className={classes.someInput}
-        value={state.password}
-        onChange={handleChange}
-      />
-
-      <TextField
-        id="passwordVerification"
-        name="passwordConfirmation"
-        label="confirmer le mot de passe"
-        type="password"
-        autoComplete="current-password"
-        className={classes.someInput}
-        value={state.passwordConfirmation}
-        onChange={handleChange}
+        value={password}
+        onChange={(e) => setPassword(e.target.value)} 
       />
       <Button
         variant="contained"
