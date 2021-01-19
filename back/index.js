@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 /* register */
 
 app.post('/register', (req, res) => {
-  const { email, password } = req.body;
+  const { firstname, lastname, email, password } = req.body;
   if (!email || !password) {
     res
       .status(400)
@@ -28,7 +28,7 @@ app.post('/register', (req, res) => {
   } else {
     const hash = bcrypt.hashSync(password, 10);
     connection.query(
-      `INSERT INTO user(email, password) VALUES (?, ?)`,
+      `INSERT INTO user(fistname, lastname, email, password) VALUES (?, ?)`,
       [email, hash],
       (error, result) => {
         if (error) {
@@ -36,6 +36,8 @@ app.post('/register', (req, res) => {
         } else {
           res.status(201).json({
             id: result.insertId,
+            firstname,
+            lastname,
             email,
             password: 'hidden',
           });
