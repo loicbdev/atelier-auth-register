@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import useStyles from "./styleFormSubscribe";
+import useStyles from "./styleRegister";
 
 const Register = () => {
   const [firstname, setFirstName] = useState("");
@@ -43,6 +43,8 @@ const Register = () => {
         id="firstname"
         name="firstname"
         label="Prénom"
+        variant="outlined"
+        margin="normal"
         className={classes.someInput}
         value={firstname}
         onChange={(e) => setFirstName(e.target.value)} 
@@ -52,6 +54,8 @@ const Register = () => {
         id="lastname"
         name="lastname"
         label="Nom"
+        variant="outlined"
+        margin="normal"
         className={classes.someInput}
         value={lastname}
         onChange={(e) => setLastName(e.target.value)} 
@@ -61,6 +65,8 @@ const Register = () => {
         id="email"
         name="email"
         label="Email"
+        variant="outlined"
+        margin="normal"
         className={classes.someInput}
         value={email}
         onChange={(e) => setEmail(e.target.value)} 
@@ -72,6 +78,8 @@ const Register = () => {
         id="password"
         name="password"
         label="Mot de passe"
+        variant="outlined"
+        margin="normal"
         type="password"
         autoComplete="current-password"
         className={classes.someInput}
