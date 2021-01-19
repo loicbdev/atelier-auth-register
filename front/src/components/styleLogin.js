@@ -6,6 +6,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "left",
+    marginTop: "5rem",
   },
   someInput: {
     margin: "2px 0",
