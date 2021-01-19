@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Users from "./components/Users";
 import Login from "./components/Login";
+import Register from "./components/Register";
 import Logout from "./components/Logout";
 
 function App() {
@@ -17,6 +18,11 @@ function App() {
             <li className="nav-item">
               <Link to="/login" className="nav-link">
                 Login
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/sign-up" className="nav-link">
+                Register
               </Link>
             </li>
             <li className="nav-item">
@@ -35,6 +41,9 @@ function App() {
           <Switch>
             <Route exact path="/login">
               <Login />
+            </Route>
+            <Route exact path="/sign-up">
+              <Register />
             </Route>
             <Route exact path="/users">
               <Users />
