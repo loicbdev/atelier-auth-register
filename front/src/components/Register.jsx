@@ -7,8 +7,8 @@ import useStyles from "./styleFormSubscribe";
 
 const Register = () => {
   const [state, setState] = useState({
-    firstName: "",
-    lastName: "",
+    firstname: "",
+    lastname: "",
     email: "",
     password: "",
     passwordConfirmation: "",
@@ -35,7 +35,7 @@ const Register = () => {
     <form className={classes.form} noValidate>
       <TextField
         id="firstname"
-        name="firstName"
+        name="firstname"
         label="Prénom"
         className={classes.someInput}
         value={state.firstName}
@@ -44,7 +44,7 @@ const Register = () => {
       />
       <TextField
         id="lastname"
-        name="lastName"
+        name="lastname"
         label="Nom"
         className={classes.someInput}
         value={state.lastName}
