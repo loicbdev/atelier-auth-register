@@ -28,8 +28,8 @@ app.post('/register', (req, res) => {
   } else {
     const hash = bcrypt.hashSync(password, 10);
     connection.query(
-      `INSERT INTO user(fistname, lastname, email, password) VALUES (?, ?)`,
-      [email, hash],
+      `INSERT INTO user(firstname, lastname, email, password) VALUES (?, ?, ?, ?)`,
+      [firstname, lastname, email, hash],
       (error, result) => {
         if (error) {
           res.status(500).json({ errorMessage: error.message });
