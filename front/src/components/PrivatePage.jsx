@@ -11,7 +11,11 @@ const PrivatePage = () => {
     }
   });
 
-  return <div>It works !</div>;
+  return (
+    <div>
+      <h1>It works !</h1>
+    </div>
+  );
 };
 
 export default PrivatePage;
