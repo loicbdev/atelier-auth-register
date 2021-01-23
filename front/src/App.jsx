@@ -5,6 +5,7 @@ import Users from "./components/Users";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Logout from "./components/Logout";
+import PrivatePage from "./components/PrivatePage";
 
 function App() {
   return (
@@ -31,6 +32,11 @@ function App() {
               </Link>
             </li>
             <li className="nav-item">
+              <Link to="/private" className="nav-link">
+                Private
+              </Link>
+            </li>
+            <li className="nav-item">
               <Link to="/logout" className="nav-link">
                 Disconnect
               </Link>
@@ -44,6 +50,9 @@ function App() {
             </Route>
             <Route exact path="/register">
               <Register />
+            </Route>
+            <Route exact path="/profile">
+              <PrivatePage />
             </Route>
             <Route exact path="/users">
               <Users />
