@@ -14,8 +14,7 @@ const Profile = () => {
         const result = await AuthService.profile();
         alert(result);
       } catch (error) {
-        // history.push("/");
-        console.log(error);
+        history.push("/");
       }
     }
   });

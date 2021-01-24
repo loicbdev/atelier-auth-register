@@ -15,8 +15,7 @@ class AuthService {
 
   static async profile() {
     return axios
-      .get(`${REACT_APP_SERVER_ADDRESS}/
-      users/profile`)
+      .get(`${REACT_APP_SERVER_ADDRESS}/users/profile`)
       .then((response) => response.data);
   }
 
