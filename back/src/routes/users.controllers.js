@@ -29,7 +29,7 @@ const authenticateWithJsonWebToken = (req, res, next) => {
 
 
 router.get('/profile', authenticateWithJsonWebToken, (request, response) => {
-    response.status(200).json({ result: 'it works!' });
+    response.status(200).send('Vous êtes bien sur la page "profile"!');
 });
 
 
