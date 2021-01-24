@@ -11,10 +11,13 @@ const Profile = () => {
       history.push("/");
     } else {
       try {
-        const result = await AuthService.profile();
-        alert(result);
+        // eslint-disable-next-line prettier/prettier
+        const result = await AuthService.
+        profile();
+        console.log(result);
       } catch (error) {
-        history.push("/");
+        // history.push("/");
+        console.log(error);
       }
     }
   });

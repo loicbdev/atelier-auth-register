@@ -14,8 +14,14 @@ class AuthService {
   }
 
   static async profile() {
+    const token = localStorage.getItem
+    ("USER_TOKEN");
     return axios
-      .get(`${REACT_APP_SERVER_ADDRESS}/users/profile`)
+      .get(`${REACT_APP_SERVER_ADDRESS}/users/profile`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
       .then((response) => response.data);
   }
 
