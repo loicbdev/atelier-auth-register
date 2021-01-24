@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import axios from "axios";
+import AuthService from "../services/AuthService";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { REACT_APP_SERVER_ADDRESS } = process.env;
 
   return (
     <div>
@@ -41,14 +40,10 @@ const Login = () => {
           onClick={async (event) => {
             event.preventDefault();
             try {
-              const result = await axios.post(
-                `${REACT_APP_SERVER_ADDRESS}/users/login`,
-                {
-                  email,
-                  password,
-                }
-              );
-              console.log("result", result);
+              const result = await AuthService.login(email, password);
+              localStorage.setItem("USER_ID", result.user.id);
+              localStorage.setItem("USER_TOKEN", result.token);
+              alert("Vous êtes bien connecté!!!");
             } catch (err) {
               console.error("error", err);
             }
