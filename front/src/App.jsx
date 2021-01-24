@@ -1,67 +1,38 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Users from "./components/Users";
 import Login from "./components/Login";
-import Register from "./components/Register";
 import Logout from "./components/Logout";
-import PrivatePage from "./components/PrivatePage";
 
 function App() {
   return (
     <Router>
       <div className="app">
-        <nav className="navbar navbar-expand navbar-dark bg-dark">
-          <div className="navbar-nav mr-auto">
-            <Link to="/" className="navbar-brand">
-              My Web App
-            </Link>
-            <li className="nav-item">
-              <Link to="/login" className="nav-link">
-                Login
-              </Link>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/login">Login</Link>
             </li>
-            <li className="nav-item">
-              <Link to="/register" className="nav-link">
-                Register
-              </Link>
+            <li>
+              <Link to="/users">Users</Link>
             </li>
-            <li className="nav-item">
-              <Link to="/users" className="nav-link">
-                Users
-              </Link>
+            <li>
+              <Link to="/logout">Disconnect</Link>
             </li>
-            <li className="nav-item">
-              <Link to="/private" className="nav-link">
-                Private
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/logout" className="nav-link">
-                Disconnect
-              </Link>
-            </li>
-          </div>
+          </ul>
         </nav>
-        <div className="container mt-3">
-          <Switch>
-            <Route exact path="/login">
-              <Login />
-            </Route>
-            <Route exact path="/register">
-              <Register />
-            </Route>
-            <Route exact path="/profile">
-              <PrivatePage />
-            </Route>
-            <Route exact path="/users">
-              <Users />
-            </Route>
-            <Route exact path="/logout">
-              <Logout />
-            </Route>
-          </Switch>
-        </div>
+
+        <Switch>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <Route exact path="/users">
+            <Users />
+          </Route>
+          <Route exact path="/logout">
+            <Logout />
+          </Route>
+        </Switch>
       </div>
     </Router>
   );

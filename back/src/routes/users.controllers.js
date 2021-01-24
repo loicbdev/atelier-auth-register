@@ -1,11 +1,15 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+require('dotenv').config();
 const connection = require('../../database');
 
 const router = express.Router();
 
+const { JWT_SECRET } = process.env;
 
-router.post('/auth', (request, response) => {
+
+router.post('/login', (request, response) => {
             const {
                 email,
                 password
@@ -23,7 +27,17 @@ router.post('/auth', (request, response) => {
                             if (err) {
                                 response.status(500).json(err);
                             } else if (res) {
-                                response.sendStatus(200);
+                                const token = jwt.sign({ userId: result[0].id }, 
+                                JWT_SECRET, { 
+                                    expiresIn: '15d',
+                                });
+                                response.status(200).json({
+                                    user: {
+                                        ...result[0],
+                                        password: '',
+                                },
+                                token,
+                            });
                             } else {
                                 response.status(403).json({
                                     errorMessage: 'password incorrect',

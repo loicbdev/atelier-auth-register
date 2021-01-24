@@ -1,25 +1,15 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
-import useStyles from "./styleLogin";
 
 const Logout = () => {
   const handleSubmit = () => {
-    localStorage.removeItem("TOKEN");
-    alert("Disconnected successfully");
+    // Your code here
   };
 
-  const classes = useStyles();
-
   return (
-    <form className={classes.form}>
-      <Button
-        variant="contained"
-        color="primary"
-        margin="normal"
-        onClick={handleSubmit}
-      >
+    <form>
+      <button type="button" onClick={handleSubmit}>
         Disconnect
-      </Button>
+      </button>
     </form>
   );
 };

@@ -1,74 +1,61 @@
 import React, { useState } from "react";
 import axios from "axios";
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
-import useStyles from "./styleLogin";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const handleSubmit = () => {
-    const { REACT_APP_SERVER_ADDRESS } = process.env;
-    if (email && password) {
-      axios
-        .post(`${REACT_APP_SERVER_ADDRESS}/login/`, {
-          email,
-          password,
-        })
-        .then((res) => res.data)
-        .then((data) => {
-          localStorage.setItem("TOKEN", data.token); // (attention!!!)
-          alert("Logged successfully"); // (attention!!!)
-        })
-        .catch((err) => {
-          alert(err.response.data.errorMessage);
-        });
-    } else {
-      alert("Please specify both email and password");
-    }
-  };
-
-  const classes = useStyles();
+  const { REACT_APP_SERVER_ADDRESS } = process.env;
 
   return (
-    <form className={classes.form} noValidate>
-      <TextField
-        variant="outlined"
-        margin="normal"
-        required
-        id="email"
-        type="email"
-        label="Email"
-        className={classes.someInput}
-        name="email"
-        autoComplete="email"
-        autoFocus
-        value={email}
-        onChange={(e) => setEmail(e.target.value)} // (attention!!!)
-      />
-      <TextField
-        name="password"
-        id="password"
-        type="password"
-        placeholder="***********"
-        variant="outlined"
-        required
-        label="Mot de passe"
-        className={classes.someInput}
-        margin="normal"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)} // (attention!!!)
-      />
-      <Button
-        variant="contained"
-        color="primary"
-        margin="normal"
-        onClick={handleSubmit}
-      >
-        Login
-      </Button>
-    </form>
+    <div>
+      <form>
+        <label htmlFor="email">
+          <span>Email:&nbsp;</span>
+          <input
+            id="email"
+            type="email"
+            value={email}
+            onChange={(event) => {
+              setEmail(event.target.value);
+            }}
+          />
+        </label>
+        <br />
+        <br />
+        <label htmlFor="password">
+          <span>Password:&nbsp;</span>
+          <input
+            id="password"
+            type="password"
+            value={password}
+            onChange={(event) => {
+              setPassword(event.target.value);
+            }}
+          />
+        </label>
+        <br />
+        <br />
+        <input
+          type="submit"
+          value="Login"
+          onClick={async (event) => {
+            event.preventDefault();
+            try {
+              const result = await axios.post(
+                `${REACT_APP_SERVER_ADDRESS}/users/login`,
+                {
+                  email,
+                  password,
+                }
+              );
+              console.log("result", result);
+            } catch (err) {
+              console.error("error", err);
+            }
+          }}
+        />
+      </form>
+    </div>
   );
 };
 

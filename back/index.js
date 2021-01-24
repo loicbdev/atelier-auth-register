@@ -2,10 +2,10 @@
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
-const connection = require('./database');
+// const connection = require('./database');
 const usersRoute = require('./src/routes/users.controllers');
 
-const { SERVER_PORT, CLIENT_URL, JWT_AUTH_SECRET } = process.env;
+const { SERVER_PORT, CLIENT_URL } = process.env;
 
 const app = express();
 
@@ -15,7 +15,6 @@ app.use(
   })
 );
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 // Your code here!
 app.use('/users', usersRoute);
