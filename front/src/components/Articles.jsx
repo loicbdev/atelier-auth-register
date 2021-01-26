@@ -4,7 +4,8 @@ import React from "react";
 const Articles = () => {
   return (
     <div>
-      <h1>page privée avec articles</h1>
+      <br />
+      <p>page privée avec articles</p>
     </div>
   );
 };
