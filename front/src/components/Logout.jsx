@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import { TokenContext } from "../contexts/TokenContext";
@@ -9,11 +9,10 @@ const Logout = () => {
   const history = useHistory();
 
   const handleSubmit = () => {
-    useEffect(() => {
-      localStorage.removeItem("TOKEN");
-      setToken(null);
-      history.push("/login");
-    }, []);
+    localStorage.removeItem("TOKEN");
+    setToken(null);
+    history.push("/login");
+    alert("Disconnected successfully");
   };
 
   const classes = useStyles();
