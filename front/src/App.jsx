@@ -9,6 +9,7 @@ import TokenContextProvider from "./contexts/TokenContext";
 import PrivateRoute from "./components/PrivateRoute";
 import HomePage from "./components/HomePage/HomePage";
 import Footer from "./components/commons/Footer/Footer";
+import "./App.css";
 
 function App() {
   return (
@@ -17,9 +18,6 @@ function App() {
         <div className="app">
           <nav className="navbar navbar-expand navbar-dark bg-dark">
             <div className="navbar-nav mr-auto">
-              <Link to="/" className="navbar-brand">
-                My Web App
-              </Link>
               <li className="nav-item">
                 <Link to="/login" className="nav-link">
                   Login
