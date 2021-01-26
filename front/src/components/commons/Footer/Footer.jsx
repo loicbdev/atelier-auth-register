@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className={style.footer}>
       <div className={style.divTeam}>
-        <span className={style.team}>WCS / Team Super Five</span>
+        <span className={style.team}>Loïc B. / Training</span>
       </div>
       <div className={style.divCopyright}>
         <img className={style.copyrightLogo} src={copyright} alt="Copyright" />

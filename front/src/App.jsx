@@ -8,6 +8,7 @@ import Logout from "./components/Logout";
 import TokenContextProvider from "./contexts/TokenContext";
 import PrivateRoute from "./components/PrivateRoute";
 import HomePage from "./components/HomePage/HomePage";
+import Footer from "./components/commons/Footer/Footer";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
             <Switch>
               <Route exact path="/">
                 <HomePage />
+                <Footer />
               </Route>
               <Route exact path="/login">
                 <Login />

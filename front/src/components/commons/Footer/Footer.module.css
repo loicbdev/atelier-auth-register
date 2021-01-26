@@ -1,5 +1,4 @@
 .footer {
-  background-color: var(--red-background-color);
   bottom: 0;
   position: relative;
   width: 100%;
@@ -15,13 +14,10 @@
 }
 
 .team {
-  color: var(--white-text-color);
   margin: 0;
-  font-family: Aquawax Medium Trial;
 }
 
 .divCopyright {
-  color: var(--white-text-color);
   display: flex;
   align-items: center;
   margin-right: 0.5rem;
@@ -33,6 +29,5 @@
 
 .copyrightText {
   margin: 0;
-  font-family: Aquawax Medium Trial;
   margin-right: 0.3rem;
 }
