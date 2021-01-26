@@ -15,7 +15,7 @@ const Login = () => {
   useEffect(() => {
     if (token) {
       // user already logged
-      history.push("/users");
+      history.push("/articles");
     }
   }, []);
 
@@ -31,7 +31,7 @@ const Login = () => {
         .then((data) => {
           setToken(data.token);
           localStorage.setItem("TOKEN", data.token); // (attention!!!)
-          history.push("/users");
+          history.push("/articles");
         })
         .catch((err) => {
           alert(err.response.data.errorMessage);
