@@ -1,0 +1,62 @@
+.img {
+    background-image: url("../../images/pouldreuzic.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 50rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .containerhome {
+    width: 60%;
+    height: 30%;
+    background-color: var(--gray-background-color);
+    opacity: 0.8;
+    box-shadow: 5px 5px 3px var(--gray-background-color);
+  }
+  
+  .title {
+    text-align: center;
+  }
+  
+  .presentation {
+    text-align: center;
+    font-size: large;
+    padding: 2.5rem;
+  }
+  
+  .categorie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    width: 99%;
+  }
+  
+  .button {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    box-shadow: 2px 2px 1px var(--gray-background-color);
+    font-family: Aquawax Medium Trial;
+    background: var(--red-background-color);
+    color: var(--white-text-color);
+    font-weight: bold;
+  }
+  
+  @media (max-width: 768px) {
+    .presentation {
+      text-align: center;
+      font-size: medium;
+    }
+    .containerhome {
+      width: 70%;
+      height: 50%;
+      background-color: var(--gray-background-color);
+      opacity: 0.8;
+      box-shadow: 5px 5px 3px var(--gray-background-color);
+    }
+  }
