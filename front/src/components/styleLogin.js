@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     display: "flex",
     flexDirection: "column",
-    alignItems: "left",
+    alignItems: "center",
     marginTop: "5rem",
   },
   someInput: {

@@ -14,7 +14,6 @@ const Slideburger = styled.ul`
     color: #f5f5f5;
     font-family: sans-serif;
     font-size: 0.8rem;
-    padding: 5px;
   }
 
   a {
@@ -60,7 +59,10 @@ const RightNav = ({ open }) => {
         <Link to="/register">S&apos;enregistrer</Link>
       </li>
       <li>
-        <Link to="/private">Articles (page privée)</Link>
+        <Link to="/articles">Articles (page privée)</Link>
+      </li>
+      <li>
+        <Link to="/users">Utilisateurs (page privée)</Link>
       </li>
       <li>
         <Link to="/logout">Se déconnecter</Link>

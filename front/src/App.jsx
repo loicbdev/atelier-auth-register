@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavBar from "./components/Nav/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import Users from "./components/Users";
+import Users from "./components/Users";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Logout from "./components/Logout";
@@ -31,6 +31,9 @@ function App() {
           </Route>
           <PrivateRoute exact path="/articles">
             <Articles />
+          </PrivateRoute>
+          <PrivateRoute exact path="/users">
+            <Users />
           </PrivateRoute>
           <Route exact path="/logout">
             <Logout />
