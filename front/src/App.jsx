@@ -7,6 +7,7 @@ import Register from "./components/Register";
 import Logout from "./components/Logout";
 import TokenContextProvider from "./contexts/TokenContext";
 import PrivateRoute from "./components/PrivateRoute";
+import HomePage from "./components/HomePage/HomePage";
 
 function App() {
   return (
@@ -42,6 +43,9 @@ function App() {
           </nav>
           <div className="container mt-3">
             <Switch>
+              <Route exact path="/">
+                <HomePage />
+              </Route>
               <Route exact path="/login">
                 <Login />
               </Route>
