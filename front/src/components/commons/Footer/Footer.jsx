@@ -47,6 +47,9 @@ const Footer = () => {
           <div className="footer-link">
             <a href="https://www.wildcodeschool.com/">Wild Code School</a>
           </div>
+          <div className="footer-link">
+            <a href="https://github.com/loicbdev/">Mon GitHub</a>
+          </div>
         </footer>
       </FOOTER>
     </div>
