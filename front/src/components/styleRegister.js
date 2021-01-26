@@ -6,17 +6,13 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "left",
+    marginTop: "5rem",
   },
   someInput: {
-    margin: "5px 0",
+    margin: "2px 0",
     textAlign: "left",
     backgroundColor: theme.palette.common.white,
     paddingBottom: "1.5rem",
-  },
-  list: {
-    margin: "7px 0",
-    textAlign: "center",
-    fontSize: "1.2rem",
   },
 }));
 
