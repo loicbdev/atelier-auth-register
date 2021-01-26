@@ -60,7 +60,6 @@ const Register = () => {
         className={classes.someInput}
         value={firstname}
         onChange={(e) => setFirstName(e.target.value)} 
-        multiline
       />
       <TextField
         id="lastname"
@@ -71,7 +70,6 @@ const Register = () => {
         className={classes.someInput}
         value={lastname}
         onChange={(e) => setLastName(e.target.value)} 
-        multiline
       />
       <TextField
         id="email"
