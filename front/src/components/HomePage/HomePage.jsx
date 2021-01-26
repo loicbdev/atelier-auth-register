@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import style from "./Home.module.css";
 
 const HomePage = () => {
@@ -16,14 +16,6 @@ const HomePage = () => {
       </div>
     </div>
   );
-};
-
-HomePage.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      categorie: PropTypes.string,
-    }),
-  }).isRequired,
 };
 
 export default HomePage;
