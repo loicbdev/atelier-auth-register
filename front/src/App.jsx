@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Users from "./components/Users";
+// import Users from "./components/Users";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Logout from "./components/Logout";
@@ -9,6 +9,7 @@ import TokenContextProvider from "./contexts/TokenContext";
 import PrivateRoute from "./components/PrivateRoute";
 import HomePage from "./components/HomePage/HomePage";
 import Footer from "./components/commons/Footer/Footer";
+import Articles from "./components/Articles";
 import "./App.css";
 
 function App() {
@@ -34,8 +35,8 @@ function App() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/users" className="nav-link">
-                  Users
+                <Link to="/articles" className="nav-link">
+                  Articles
                 </Link>
               </li>
               <li className="nav-item">
@@ -57,8 +58,8 @@ function App() {
               <Route exact path="/register">
                 <Register />
               </Route>
-              <PrivateRoute exact path="/users">
-                <Users />
+              <PrivateRoute exact path="/articles">
+                <Articles />
               </PrivateRoute>
               <Route exact path="/logout">
                 <Logout />
