@@ -1,19 +1,55 @@
 import React from "react";
-import copyright from "../../../images/logo-copyright.svg";
-import style from "./Footer.module.css";
+import styled from "styled-components";
+// import { Link } from "react-router-dom";
+
+const FOOTER = styled.div`
+  .Footer {
+    background-color: #0d2538;
+    border-top: 2px solid #f1f1f1;
+    color: #0d2538;
+    height: 8vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .footer-link {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 1rem;
+  }
+  a {
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    text-decoration: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    .Footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+    .footer-link {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+    }
+  }
+`;
 
 const Footer = () => {
   return (
-    <footer className={style.footer}>
-      <div className={style.divTeam}>
-        <span className={style.team}>Loïc B. / Training</span>
-      </div>
-      <div className={style.divCopyright}>
-        <img className={style.copyrightLogo} src={copyright} alt="Copyright" />
-        <span className={style.copyrightText}>Copyright</span>
-        <span>2021</span>
-      </div>
-    </footer>
+    <div>
+      <FOOTER>
+        <footer className="Footer">
+          <div className="footer-link">
+            <a href="https://www.wildcodeschool.com/">Wild Code School</a>
+          </div>
+        </footer>
+      </FOOTER>
+    </div>
   );
 };
 
