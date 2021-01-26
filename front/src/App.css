@@ -3,3 +3,7 @@
     flex-direction: column;
     width: 100%;
 }
+
+.navbar-nav {
+    flex-wrap: wrap;
+}

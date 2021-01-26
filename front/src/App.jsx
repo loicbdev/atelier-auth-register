@@ -17,6 +17,11 @@ function App() {
       <Router>
         <div className="app">
           <nav className="navbar navbar-expand navbar-dark bg-dark">
+            <div className="navbar-title">
+              <Link to="/" className="navbar-brand">
+                My Web App
+              </Link>
+            </div>
             <div className="navbar-nav mr-auto">
               <li className="nav-item">
                 <Link to="/login" className="nav-link">
@@ -25,7 +30,7 @@ function App() {
               </li>
               <li className="nav-item">
                 <Link to="/register" className="nav-link">
-                  Register
+                  Sign-up
                 </Link>
               </li>
               <li className="nav-item">
@@ -35,7 +40,7 @@ function App() {
               </li>
               <li className="nav-item">
                 <Link to="/logout" className="nav-link">
-                  Disconnect
+                  Logout
                 </Link>
               </li>
             </div>
