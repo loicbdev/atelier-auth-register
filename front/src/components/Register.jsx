@@ -1,8 +1,10 @@
 /* eslint-disable prettier/prettier */
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import { TokenContext } from "../contexts/TokenContext";
 import useStyles from "./styleRegister";
 
 const Register = () => {
@@ -10,6 +12,15 @@ const Register = () => {
   const [lastname, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const history = useHistory();
+  const { token, setToken } = useContext(TokenContext);
+
+  useEffect(() => {
+    if (token) {
+      // user already logged
+      history.push("/login");
+    }
+  }, []);
 
   const handleSubmit = () => {
     const { REACT_APP_SERVER_ADDRESS } = process.env;
@@ -23,8 +34,9 @@ const Register = () => {
         })
         .then((res) => res.data)
         .then((data) => {
+          setToken(data.token);
           localStorage.setItem("TOKEN", data.token); // (attention!!!)
-          alert("Sign-Up successfully"); // (attention!!!)
+          history.push("/login");
         })
         .catch((err) => {
           alert(err.response.data.errorMessage);
