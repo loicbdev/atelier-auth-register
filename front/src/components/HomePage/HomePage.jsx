@@ -9,8 +9,8 @@ const HomePage = () => {
         <div className={style.containerhome}>
           <h1 className={style.title}>My Web App</h1>
           <p className={style.presentation}>
-            Bienvenue sur My web App! Site que j&apos;utilise pour
-            m&apos;entrainer à différentes technos (Front et Back).
+            Bienvenue sur le site que j&apos;utilise pour m&apos;entrainer à
+            différentes technos (Front et Back).
           </p>
         </div>
       </div>
