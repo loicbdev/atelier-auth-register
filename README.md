@@ -1,1 +1,1 @@
-# atelier-auth
+# atelier-auth-register
