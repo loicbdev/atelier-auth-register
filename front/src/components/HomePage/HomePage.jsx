@@ -7,10 +7,10 @@ const HomePage = () => {
     <div className={style.Home}>
       <div className={style.img}>
         <div className={style.containerhome}>
-          <h1 className={style.title}>My Web App</h1>
+          <h1 className={style.title}>Atelier &quot;auth-register&quot;</h1>
           <p className={style.presentation}>
-            Bienvenue sur le site que j&apos;utilise pour m&apos;entrainer à
-            différentes technos (Front et Back).
+            Atelier dédié à l&apos;identification, la connexion et l&apos;accès
+            aux pages privées
           </p>
         </div>
       </div>

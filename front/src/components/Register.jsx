@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React, { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
@@ -48,7 +47,6 @@ const Register = () => {
 
   const classes = useStyles();
 
-
   return (
     <form className={classes.form} noValidate>
       <TextField
@@ -59,7 +57,7 @@ const Register = () => {
         margin="normal"
         className={classes.someInput}
         value={firstname}
-        onChange={(e) => setFirstName(e.target.value)} 
+        onChange={(e) => setFirstName(e.target.value)}
       />
       <TextField
         id="lastname"
@@ -69,7 +67,7 @@ const Register = () => {
         margin="normal"
         className={classes.someInput}
         value={lastname}
-        onChange={(e) => setLastName(e.target.value)} 
+        onChange={(e) => setLastName(e.target.value)}
       />
       <TextField
         id="email"
@@ -79,7 +77,7 @@ const Register = () => {
         margin="normal"
         className={classes.someInput}
         value={email}
-        onChange={(e) => setEmail(e.target.value)} 
+        onChange={(e) => setEmail(e.target.value)}
         autoComplete="email"
         autoFocus
       />
@@ -94,7 +92,7 @@ const Register = () => {
         autoComplete="current-password"
         className={classes.someInput}
         value={password}
-        onChange={(e) => setPassword(e.target.value)} 
+        onChange={(e) => setPassword(e.target.value)}
       />
       <Button
         variant="contained"
