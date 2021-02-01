@@ -31,18 +31,12 @@ CREATE TABLE `user` (
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `user`
+-- Dumping events for database 'jwtcourse'
 --
-
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'','','lbodolec@gmail.com','$2b$10$QJEEflusApNSzzmbCZtKGOX.zfLMTd9WV2qopYkmOl2KR.m.VQvFS'),(3,'Loïc','Bodolec','loicbodolec@msn.com','$2b$10$1bznooQa0YqT6VB4.ncm3eFXrcvhTGrlvzhaiZ/JRvmCpqlCPxTpi'),(4,'John','Doe','john@doe.fr','$2b$10$nA4nWaqK86MBBAAv3QhnFOsXBl322xItbEAS2K5FkuwD7RDLSip/q'),(5,'Jane','Doe','jane@doe.fr','$2b$10$eRcf/nvbGJXKjnQ52Ak7fuRYN26ZWbJD7GdrXTmJBXbBCi873YleG'),(6,'Johnny','Toe','johnny@toe.com','$2b$10$L1TKKezuxrKmpZaHRAVCA.6WKR7IZgWRnhKHF0HxPDjVHojG9xGc2');
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Dumping routines for database 'jwtcourse'
@@ -57,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-01-19 19:11:18
+-- Dump completed on 2021-02-01 17:53:54
